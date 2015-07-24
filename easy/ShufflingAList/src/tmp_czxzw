@@ -1,0 +1,17 @@
+extern crate rand;
+
+use std::io;
+use std::cmp::Ordering;
+use rand::Rng;
+use std::env::args
+
+fn main()
+{
+	let args: Vec<_> = env::args().collect();
+
+	if args.len() > 1
+	{
+		println!("The first")
+	}
+	
+}
