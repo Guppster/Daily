@@ -1,0 +1,28 @@
+extern crate rand;
+
+use std::io;
+use std::cmp::Ordering;
+use std::env;
+use rand::Rng;
+
+fn main()
+{
+	let args: Vec<_> = env::args().collect();
+	let result: Vec<_> = Vec::with_capacity(args.capacity());
+
+	if args.len() > 1
+	{
+		println!("There are(is) {} argument(s)", args.len() - 1)
+	}
+
+	for x in args.iter()
+	{
+		let n = rand::thread_rng().gen_range(0, args.len());
+		result.pu
+	}
+
+	for y in result.iter() 
+	{
+    	println!("{}", y);
+	}
+}//End of main

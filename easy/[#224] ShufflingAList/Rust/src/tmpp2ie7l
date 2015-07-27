@@ -1,0 +1,15 @@
+extern crate rand;
+
+use std::io;
+use std::cmp::Ordering;
+use rand::Rng;
+
+fn main(list: Vec<int>)
+{
+	let resu: Vec<i32> = Vec::new();
+	for x in list
+	{
+
+	}
+	let randNum = rand::thread_rnd().gen_range(1, n)
+}

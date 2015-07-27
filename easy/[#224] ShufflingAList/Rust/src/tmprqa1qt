@@ -1,0 +1,16 @@
+extern crate rand;
+
+use std::io;
+use std::cmp::Ordering;
+use rand::Rng;
+
+fn main(&mut l: &Vec<uint>)
+{
+	let n = 
+	for x in list
+	{
+		let randNum = rand::thread_rnd().gen_range(1, 2);
+		if
+	}
+	
+}
