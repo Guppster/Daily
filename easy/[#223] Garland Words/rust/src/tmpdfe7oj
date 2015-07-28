@@ -1,0 +1,16 @@
+
+use std:io;
+
+fn main() 
+{
+    for word in std::env::args().skip(1)
+    {
+    	match garland
+    }
+
+}//End of main method
+
+fn garland()
+{
+
+}

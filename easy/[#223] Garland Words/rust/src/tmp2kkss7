@@ -1,0 +1,27 @@
+
+use std:io;
+
+
+struct Garland<'w> 
+{
+    word: &'w str,
+    length: usize
+}
+
+fn main() 
+{
+    for word in std::env::args().skip(1)
+    {
+    	match garland(&word)
+    	{
+    		some(garland) => println!("{}: {}", garland.word, garland.length)
+    		None => println!("{} is not a garland word", word)
+    	}
+    }
+
+}//End of main method
+
+fn garland(s: &str) -> Option<Garland>
+{
+	let characters: Vec<_
+}

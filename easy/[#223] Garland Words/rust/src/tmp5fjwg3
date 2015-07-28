@@ -1,0 +1,20 @@
+
+use std:io;
+
+fn main() 
+{
+    for word in std::env::args().skip(1)
+    {
+    	match garland(&word)
+    	{
+    		some(garland) => println!({}: {}, garland.word, garland.length)
+    		None
+    	}
+    }
+
+}//End of main method
+
+fn garland()
+{
+
+}

@@ -1,0 +1,16 @@
+
+use std:io;
+
+fn main() 
+{
+    println!("\nEnter a word:");
+
+	let mut guess = String::new();
+
+    io::stdin().read_line(&mut guess)
+    	.ok()
+    	.expect("Failed to read line")
+
+}//End of main method
+
+fn garla

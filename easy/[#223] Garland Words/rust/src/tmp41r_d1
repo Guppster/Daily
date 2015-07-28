@@ -1,0 +1,12 @@
+
+use std:io;
+
+fn main() 
+{
+    println!("\nEnter a word: ");
+
+    io::stdin().read_line(&mut guess)
+    	.ok()
+    	.exp
+
+}

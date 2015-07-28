@@ -1,0 +1,13 @@
+
+use std:io;
+
+fn main() 
+{
+    for word in std::env
+
+}//End of main method
+
+fn garland()
+{
+
+}

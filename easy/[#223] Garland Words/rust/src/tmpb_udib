@@ -1,0 +1,3 @@
+fn main() {
+    println!("Enter a wor");
+}

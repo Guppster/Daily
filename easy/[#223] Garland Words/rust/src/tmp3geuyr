@@ -1,0 +1,10 @@
+
+use
+
+fn main() 
+{
+    println!("\nEnter a word: ");
+
+
+
+}

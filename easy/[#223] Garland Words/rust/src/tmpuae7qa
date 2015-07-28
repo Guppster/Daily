@@ -1,0 +1,10 @@
+
+use std:i
+
+fn main() 
+{
+    println!("\nEnter a word: ");
+
+
+
+}
