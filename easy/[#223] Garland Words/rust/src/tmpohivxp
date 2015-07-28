@@ -1,0 +1,45 @@
+#![feature(slice_splits)]
+struct Garland<'w> 
+{
+    word: &'w str,
+    length: usize
+}
+
+fn main() 
+{
+    for degree in std::env::args().skip(1).map(|s| garland(&s))
+    {
+    	println!("{}", degree);
+    }
+
+}//End of main method
+
+//Returns true if s is a GarlandWord with degree d else false
+fn garland_helper(s: &str, d:usize) -> bool
+{
+	let begin = s.chars().take(d);
+	let end = s
+}
+
+fn garland(s: &str) -> Option<Garland>
+{
+	let characters: Vec<_> = s.chars().collect();
+	let mut a = drop_tail(&characters);
+	let mut b = drop_head(&characters);
+
+	loop 
+	{
+		if a.len() == 0 { return None; }
+
+		if a == b
+		{
+			return Some(Garland{
+				word: s,
+				length: a.len()
+			})
+		}
+
+		a = drop_tail(a);
+		b = drop_head(b);
+	}
+}

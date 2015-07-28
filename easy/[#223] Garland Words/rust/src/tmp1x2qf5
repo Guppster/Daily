@@ -1,0 +1,39 @@
+struct Garland<'w> 
+{
+    word: &'w str,
+    degree: usize
+}
+
+fn main() 
+{
+    for word in std::env::args().skip(1)
+    {
+    	match garland(&word) 
+    	{
+            Some(garland) => println!("{}: {}", garland.word, garland.degree),
+            None => println!("{} is not a garland word", word)
+        }
+    }
+
+}//End of main method
+
+//Returns true if s is a GarlandWord with degree d else false
+fn garland_helper(s: &str, d:usize) -> bool
+{
+	s.chars().take(d).zip(s.chars().skip(s.len()-d)).all((|x| x.0 == x.1))
+}
+
+//Returns the degee if s is a garland word, and 0 otherwise
+fn garland(s: &str) -> Option<Garland>
+{
+	match (0 .. s.len()).map(|d| garland_helper(s,d)).rposition(|b| b)
+	{
+		Some(n) => Some(Garland {
+                word: s,
+                degree: n
+            }),
+		None    => 0
+	}
+
+	for 0 ..
+}

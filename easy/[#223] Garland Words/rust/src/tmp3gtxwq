@@ -1,0 +1,22 @@
+#![feature(slice_splits)]
+struct Garland<'w> 
+{
+    word: &'w str,
+    length: usize
+}
+
+fn main() 
+{
+    for degree in std::env::args().skip(1).map(|s| garland(&s))
+    {
+    	println!("{}", degree);
+    }
+
+}//End of main method
+
+fn garland(s: &str) -> u
+{
+	//Returns the degree is s is a garland word, and 0 otherwise
+
+
+}
