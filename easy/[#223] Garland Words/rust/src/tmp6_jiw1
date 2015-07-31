@@ -22,10 +22,10 @@ fn garland(s: &str) -> Option<Garland>
 {
 	match (0..s.len()).map(|d| &s[..d] == &s[s.len()-d..]).rposition(|b| b) 
    	{
-        Some(n) => Some(Garland {
+        Some(Garland) => Garland {
                 word: s,
                 degree: n
-            }),
-        None    => None
+            },
+        None    => 0
     }
-}//End of garland method
+}

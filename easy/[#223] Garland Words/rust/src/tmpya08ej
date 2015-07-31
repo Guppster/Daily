@@ -26,6 +26,6 @@ fn garland(s: &str) -> Option<Garland>
                 word: s,
                 degree: n
             }),
-        None    => None
+        None    => nonn
     }
-}//End of garland method
+}

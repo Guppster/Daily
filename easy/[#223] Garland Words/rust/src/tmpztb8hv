@@ -28,4 +28,4 @@ fn garland(s: &str) -> Option<Garland>
             }),
         None    => None
     }
-}//End of garland method
+}

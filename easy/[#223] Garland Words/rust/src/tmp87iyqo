@@ -25,7 +25,10 @@ fn garland(s: &str) -> Option<Garland>
         Some(n) => Some(Garland {
                 word: s,
                 degree: n
-            }),
-        None    => None
+            },
+        None    => Garland {
+                word: s,
+                degree: 0
+            }
     }
-}//End of garland method
+}
