@@ -15,7 +15,7 @@ fn main()
 	}
 }//End of main
 
-fn shuffle<T>(mut args: Vec<T>) -> Vec<T>
+fn shuffle(args: Vec<_u) -> Vec<_>
 { 
 	let mut temp = Vec::with_capacity((args.capacity()));
 
