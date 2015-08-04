@@ -1,0 +1,14 @@
+use std::io;
+use std::env;
+
+
+fn main() 
+{
+	let input = env::args().collect();
+
+	for s in input
+	{
+		let mut mass = getMass
+	}
+    
+}

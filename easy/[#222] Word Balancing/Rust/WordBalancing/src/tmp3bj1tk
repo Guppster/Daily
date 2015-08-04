@@ -1,0 +1,19 @@
+use std::io;
+use std::env;
+
+
+fn main() 
+{
+	let input = env::args().collect();
+
+	for s in input
+	{
+		let mass = getMass(input);
+		let balanceIndex = getBalanceIndex(mass);
+		if(balance == 0)
+		{
+			println!("{} Does not B", s);
+		}
+	}
+    
+}

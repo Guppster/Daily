@@ -1,0 +1,38 @@
+use std::*;
+
+
+fn main() 
+{
+	let mut input:= env::args().collect();
+
+
+	for s in input.iter()
+	{
+		let mass = getMass(input);
+		let balanceIndex = getBalanceIndex(mass);
+
+		if(balanceIndex == 0)
+		{
+			//println!("{} DOES NOT BALANCE", s);
+		}
+
+	}
+}//End of Main method
+
+fn getBalanceIndex(mass: Vec<i32>) -> i32
+{
+	let epsilon = 1e-9;
+	//let total = mass.iter().sum();
+
+}//End of getBalanceIndex function
+
+fn getBalanceSum(mass: Vec<i32>) -> i32
+{
+
+}//End of getBalanceSum function
+
+fn getMass(input: String) -> Vec<i32>
+{
+
+}//End of getMass function
+
