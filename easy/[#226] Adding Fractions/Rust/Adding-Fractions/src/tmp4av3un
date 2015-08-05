@@ -1,3 +1,5 @@
+use s
+
 fn main() 
 {
     println!("Hello, world!");
