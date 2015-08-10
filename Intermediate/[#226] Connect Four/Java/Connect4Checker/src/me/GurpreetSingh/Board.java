@@ -25,9 +25,48 @@ public class Board
     /**
      * Places a player in the specified column.
      */
-    public void placePlayerInColumn(int x, Player player)
+    public boolean placePlayerInColumn(int x, Player player)
     {
         columnHeight[x]++;
         field[x][columnHeight[x]] = player;
+        return checkforWin(x, player);
     }//End of placePlayerInColumn
+
+    private boolean checkforWin(int x, Player player)
+    {
+        try{
+            return  //RIGHT
+                    (field[x+1][columnHeight[x]] == player) &&
+                            (field[x+2][columnHeight[x]] == player) &&
+                            (field[x+3][columnHeight[x]] == player) ||
+                    //LEFT
+                    (field[x-1][columnHeight[x]] == player) &&
+                            (field[x-2][columnHeight[x]] == player) &&
+                            (field[x-3][columnHeight[x]] == player) ||
+                     //UP
+                    (field[x][columnHeight[x]+1] == player) &&
+                            (field[x][columnHeight[x]+2] == player) &&
+                            (field[x][columnHeight[x]+3] == player) ||
+                    //DOWN
+                    (field[x][columnHeight[x]-1] == player) &&
+                            (field[x][columnHeight[x]-2] == player) &&
+                            (field[x][columnHeight[x]-3] == player) ||
+                    //UP RIGHT
+                    (field[x][columnHeight[x]+1] == player) &&
+                            (field[x][columnHeight[x]+2] == player) &&
+                            (field[x][columnHeight[x]+3] == player) ||
+                    //DOWN RIGHT
+                    (field[x][columnHeight[x]-1] == player) &&
+                            (field[x][columnHeight[x]-2] == player) &&
+                            (field[x][columnHeight[x]-3] == player) |
+                    //UP LEFT
+                    (field[x][columnHeight[x]+1] == player) &&
+                            (field[x][columnHeight[x]+2] == player) &&
+                            (field[x][columnHeight[x]+3] == player) ||
+                    //DOWN LEFT
+                    (field[x][columnHeight[x]-1] == player) &&
+                            (field[x][columnHeight[x]-2] == player) &&
+                            (field[x][columnHeight[x]-3] == player) ||
+        }catch(ArrayIndexOutOfBoundsException ignored){}
+    }
 }//End of board
