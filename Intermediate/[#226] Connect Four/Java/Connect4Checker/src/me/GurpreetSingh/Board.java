@@ -27,7 +27,9 @@ public class Board
      */
     public boolean placePlayerInColumn(int x, Player player)
     {
+
         columnHeight[x]++;
+        System.out.println(x + " incremented to " + columnHeight[x]);
         field[x][columnHeight[x]] = player;
         return checkforWin(x, player);
     }//End of placePlayerInColumn
@@ -36,61 +38,62 @@ public class Board
     {
         try{
             return  //RIGHT
-                    (field[x+1][columnHeight[x]] == player) &&
+                    ((field[x+1][columnHeight[x]] == player) &&
                             (field[x+2][columnHeight[x]] == player) &&
-                            (field[x+3][columnHeight[x]] == player) ||
+                            (field[x+3][columnHeight[x]] == player)) ||
                     //LEFT
-                    (field[x-1][columnHeight[x]] == player) &&
-                            (field[x-2][columnHeight[x]] == player) &&
-                            (field[x-3][columnHeight[x]] == player) ||
+                            ((field[x-1][columnHeight[x]] == player) &&
+                                    (field[x-2][columnHeight[x]] == player) &&
+                                    (field[x-3][columnHeight[x]] == player)) ||
                      //UP
-                    (field[x][columnHeight[x]+1] == player) &&
-                            (field[x][columnHeight[x]+2] == player) &&
-                            (field[x][columnHeight[x]+3] == player) ||
+                            ((field[x][columnHeight[x]+1] == player) &&
+                                    (field[x][columnHeight[x]+2] == player) &&
+                                    (field[x][columnHeight[x]+3] == player)) ||
                     //DOWN
-                    (field[x][columnHeight[x]-1] == player) &&
-                            (field[x][columnHeight[x]-2] == player) &&
-                            (field[x][columnHeight[x]-3] == player) ||
+                            ((field[x][columnHeight[x]-1] == player) &&
+                                    (field[x][columnHeight[x]-2] == player) &&
+                                    (field[x][columnHeight[x]-3] == player)) ||
                     //UP RIGHT
-                    (field[x+1][columnHeight[x]+1] == player) &&
-                            (field[+2][columnHeight[x]+2] == player) &&
-                            (field[x+3][columnHeight[x]+3] == player) ||
+                            ((field[x+1][columnHeight[x]+1] == player) &&
+                                    (field[x+2][columnHeight[x]+2] == player) &&
+                                    (field[x+3][columnHeight[x]+3] == player)) ||
                     //DOWN RIGHT
-                    (field[x-1][columnHeight[x]-1] == player) &&
-                            (field[x-2][columnHeight[x]-2] == player) &&
-                            (field[x-3][columnHeight[x]-3] == player) |
+                            ((field[x-1][columnHeight[x]-1] == player) &&
+                                    (field[x-2][columnHeight[x]-2] == player) &&
+                                    (field[x-3][columnHeight[x]-3] == player)) ||
                     //UP LEFT
-                    (field[x-1][columnHeight[x]+1] == player) &&
-                            (field[x-2][columnHeight[x]+2] == player) &&
-                            (field[x-3][columnHeight[x]+3] == player) ||
+                            ((field[x-1][columnHeight[x]+1] == player) &&
+                                    (field[x-2][columnHeight[x]+2] == player) &&
+                                    (field[x-3][columnHeight[x]+3] == player)) ||
                     //DOWN LEFT
-                    (field[x-1][columnHeight[x]-1] == player) &&
-                            (field[x-2][columnHeight[x]-2] == player) &&
-                            (field[x-3][columnHeight[x]-3] == player) ||
+                            ((field[x-1][columnHeight[x]-1] == player) &&
+                                    (field[x-2][columnHeight[x]-2] == player) &&
+                                    (field[x-3][columnHeight[x]-3] == player)) ||
                     //2 <- 1 ->
-                    (field[x][columnHeight[x]+1] == player) &&
-                            (field[x][columnHeight[x]+2] == player) &&
-                            (field[x][columnHeight[x]+3] == player) ||
+                            ((field[x-1][columnHeight[x]] == player) &&
+                                    (field[x-2][columnHeight[x]] == player) &&
+                                    (field[x+1][columnHeight[x]] == player)) ||
                     //1 <- 2 ->
-                    (field[x][columnHeight[x]+1] == player) &&
-                            (field[x][columnHeight[x]+2] == player) &&
-                            (field[x][columnHeight[x]+3] == player) ||
+                            ((field[x-1][columnHeight[x]] == player) &&
+                                    (field[x+1][columnHeight[x]] == player) &&
+                                    (field[x+2][columnHeight[x]] == player)) ||
                     //1 down left 2 up right
-                    (field[x][columnHeight[x]-1] == player) &&
-                            (field[x][columnHeight[x]-2] == player) &&
-                            (field[x][columnHeight[x]-3] == player) ||
+                            ((field[x-1][columnHeight[x]-1] == player) &&
+                                    (field[x+1][columnHeight[x]+1] == player) &&
+                                    (field[x+2][columnHeight[x]+2] == player)) ||
                     //2 down left 1 up right
-                    (field[x+1][columnHeight[x]+1] == player) &&
-                            (field[+2][columnHeight[x]+2] == player) &&
-                            (field[x+3][columnHeight[x]+3] == player) ||
+                            ((field[x-1][columnHeight[x]-1] == player) &&
+                                    (field[x-2][columnHeight[x]-2] == player) &&
+                                    (field[x+1][columnHeight[x]+1] == player)) ||
                     //1 up left 2 down right
-                    (field[x-1][columnHeight[x]-1] == player) &&
-                            (field[x-2][columnHeight[x]-2] == player) &&
-                            (field[x-3][columnHeight[x]-3] == player) |
+                            ((field[x-1][columnHeight[x]+1] == player) &&
+                                    (field[x+1][columnHeight[x]-1] == player) &&
+                                    (field[x+2][columnHeight[x]+2] == player)) ||
                     //2 up left 1 down right
-                    (field[x-1][columnHeight[x]+1] == player) &&
-                        (field[x-2][columnHeight[x]+2] == player) &&
-                        (field[x-3][columnHeight[x]+3] == player) ||
+                            ((field[x-1][columnHeight[x]+1] == player) &&
+                                    (field[x-2][columnHeight[x]+2] == player) &&
+                                    (field[x+1][columnHeight[x]-1] == player));
         }catch(ArrayIndexOutOfBoundsException ignored){}
+        return false;
     }
 }//End of board
