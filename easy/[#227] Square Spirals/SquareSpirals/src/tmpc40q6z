@@ -1,0 +1,4 @@
+fn main()
+{
+	let mut inpi = env::args().collect();
+}

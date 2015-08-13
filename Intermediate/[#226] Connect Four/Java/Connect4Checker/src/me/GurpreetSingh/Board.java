@@ -29,7 +29,6 @@ public class Board
     {
 
         columnHeight[x]++;
-        System.out.println(x + " incremented to " + columnHeight[x]);
         field[x][columnHeight[x]] = player;
         return checkforWin(x, player);
     }//End of placePlayerInColumn

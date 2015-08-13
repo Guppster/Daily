@@ -1,0 +1,4 @@
+fn main()
+{
+	let mut i = env::args().collect();
+}
