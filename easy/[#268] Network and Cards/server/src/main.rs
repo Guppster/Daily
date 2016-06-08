@@ -19,7 +19,7 @@ fn main() {
 fn send_heartbeats(mut s: TcpStream)
 {
 	let mut response = String::new();
-	let hb b"heart beat\n";
+	let hb "heart beat\n";
 	let mut buf_inp = BufReader::new(s.try_clone().unwrap());
 
 	loop{
