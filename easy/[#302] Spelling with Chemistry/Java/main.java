@@ -1,9 +1,16 @@
+import java.util.Scanner;
+
 public class main
 {
     public static void main(String[] args)
     {
+        //Scanner to read input
+        Scanner scaner = new Scanner();
+
+        //List to store elements read in from file
         List<Element> elements = new ArrayList<Element>();
 
+        //Read in the CSV
         try{
             File input = new File("../input.csv");
             InputStream inputStream = new FileInputStream(input);
@@ -18,11 +25,20 @@ public class main
             br.close();
         } catch (FileNotFoundException | IOException e){}
 
+        Stream.generate(() ->
+        {
+            System.out.print("Enter a word: ");
+            scanner.next();
+        });
+    }
+
+        //Function to generate an object from a line
         private Function<String, Element> mapToElement = (line) ->
         {
+            line = line.replaceAll("\"", "");
             String[] data = line.split(",");
 
-            return new Element(data[0], data[1], data[2]);
+            return new Element(data[1].trim(), data[2].trim(), data[3].trim());
         }
 
         private class Element
@@ -53,5 +69,4 @@ public class main
                 return weight;
             }
         }
-    }
 }
